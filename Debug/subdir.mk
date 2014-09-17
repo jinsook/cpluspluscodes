@@ -4,12 +4,15 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../array_strings.cpp \
 ../main.cpp 
 
 OBJS += \
+./array_strings.o \
 ./main.o 
 
 CPP_DEPS += \
+./array_strings.d \
 ./main.d 
 
 

@@ -2,29 +2,27 @@
 #define __basic_ds_h_
 
 #include <cstddef>
-#pragma __pragma(message("TODO: "_STR(x) " :: " __FILE__ "@"STR(__LINE__))) TODO
+#define TODO(x) __pragma(message("TODO: "_STR(x) " :: " __FILE__ "@"STR(__LINE__)))
 
-template <class Element>
+template <class Data>
 class LinkedList
 {
 	struct Element
 	{
 		Element *next;
-		void *data;
+		Data *data;
 	};
 private:
 	Element *head;
-	Element *tail;
 
 public:
-	LinkedList():head(0), tail(0){}
+	LinkedList():head(0){}
 
-	LinkedList(void* d){
+	LinkedList(Data *d){
 		head = new Element(d);
 	}
 
 	~LinkedList(){
-		TODO;
 	}
 
 	void remove(void* d){}
