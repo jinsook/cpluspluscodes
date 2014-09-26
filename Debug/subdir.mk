@@ -6,17 +6,20 @@
 CPP_SRCS += \
 ../array_strings.cpp \
 ../linkedlists.cpp \
-../main.cpp 
+../main.cpp \
+../stacks_queues.cpp 
 
 OBJS += \
 ./array_strings.o \
 ./linkedlists.o \
-./main.o 
+./main.o \
+./stacks_queues.o 
 
 CPP_DEPS += \
 ./array_strings.d \
 ./linkedlists.d \
-./main.d 
+./main.d \
+./stacks_queues.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

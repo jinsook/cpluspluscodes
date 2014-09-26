@@ -88,9 +88,10 @@ void reverseString2(char* str)
 	}
 }
 
-void countChar(const string&str, unordered_map<char, unsigned>& map)
+void countChar(const string&str, tr1::unordered_map<char,unsigned> map)
 {
 	unordered_map<char,unsigned>::iterator mapIter;
+
 	for ( unsigned i = 0; i < str.length(); i++)
 	{
 		char c = str.at(i);
@@ -116,7 +117,7 @@ bool isPermutation(const string& str1, const string& str2)
 	try {
         for ( Mymap::iterator iter = str1Map.begin(); iter != str1Map.end(); iter ++ )
         {
-         //       cout<<"str1:"<<iter->first<<":"<<iter->second<<endl;
+         //       cout<<"str1:<<iter->first<<":"<<iter->second<<endl;
          //       cout<<"str2:     "<<str2Map[iter->first]<<endl;
                 if ( str2Map[iter->first] != iter->second ) return false;
                 str2Map.erase(iter->first);

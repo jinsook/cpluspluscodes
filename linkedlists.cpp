@@ -8,13 +8,13 @@ using namespace std::tr1;
 
 //2.1 write code to remove duplicates from an unsorted linked list
 
-void removeDup(Node* list)
+void removeDup(Node<int>* list)
 {
 	if (!list) return;
 
 	unordered_set<int> set;
 
-	Node *ptr = list;
+	Node<int> *ptr = list;
 	set.insert(ptr->data);
 
 	while ( ptr->next )
@@ -24,7 +24,7 @@ void removeDup(Node* list)
 			set.insert(ptr->next->data);
 		}
 		else {//remove ptr->next
-			Node *tmpPtr = ptr->next;
+			Node<int> *tmpPtr = ptr->next;
 			ptr->next = ptr->next->next;
 			delete tmpPtr;
 		}
@@ -34,12 +34,12 @@ void removeDup(Node* list)
 }
 
 //no buffer allowed
-void removeDup2(Node *list)
+void removeDup2(Node<int> *list)
 {
 	if (!list) return;
 
-	Node* ptr = list;
-	Node* rPtr = list;
+	Node<int>* ptr = list;
+	Node<int>* rPtr = list;
 
 	while (ptr)
 	{
@@ -47,7 +47,7 @@ void removeDup2(Node *list)
 		{
 			if ( *ptr == *rPtr->next )
 			{ //remove rPtr
-				Node* tmpPtr = rPtr->next;
+				Node<int>* tmpPtr = rPtr->next;
 				rPtr->next = rPtr->next->next;
 				delete tmpPtr;
 			}
@@ -58,14 +58,14 @@ void removeDup2(Node *list)
 	}
 }
 
-//2.1 kth to last element
-Node* nthToLast(Node* head, int k, int& i)
+//2.1 kth to last element in book
+Node<int>* nthToLast(Node<int>* head, int k, int& i)
 {
 	if (head == NULL){
 		return NULL;
 	}
 
-	Node *nd = nthToLast(head->next, k, i);
+	Node<int> *nd = nthToLast(head->next, k, i);
 	i = i+1;
 	if (i == k)
 		return head;

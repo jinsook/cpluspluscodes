@@ -4,28 +4,20 @@
 #include <cstddef>
 #define TODO(x) __pragma(message("TODO: "_STR(x) " :: " __FILE__ "@"STR(__LINE__)))
 
-template <class Data>
-class LinkedList
+template <class Type>
+class Node
 {
-	struct Element
-	{
-		Element *next;
-		Data *data;
-	};
-private:
-	Element *head;
-
 public:
-	LinkedList():head(0){}
+	Type data;
+	Node *next;
 
-	LinkedList(Data *d){
-		head = new Element(d);
+	Node(Type i):data(i),next(0){}
+
+	bool operator==(const Node& node)
+	{
+		if (data == node.data )
+			return true;
+		return false;
 	}
-
-	~LinkedList(){
-	}
-
-	void remove(void* d){}
 };
-
 #endif

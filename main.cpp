@@ -61,15 +61,15 @@ int main(int argc , char**argv)
     cout<<"isPermutation2:abc:baa-->"<<isPermutation2(string("abc"), string("baa"))<<endl;
 
     /////////////linked lists//////////////////
-    Node *head = new Node(1);
-    head->next = new Node(2);
-    head->next->next = new Node(3);
-    head->next->next->next = new Node(4);
-    head->next->next->next->next = new Node(5);
-    head->next->next->next->next->next = new Node(6);
+    Node<int> *head = new Node<int>(1);
+    head->next = new Node<int>(2);
+    head->next->next = new Node<int>(3);
+    head->next->next->next = new Node<int>(4);
+    head->next->next->next->next = new Node<int>(5);
+    head->next->next->next->next->next = new Node<int>(6);
 
     int i = 0;
-    Node *ptr = nthToLast(head, 2, i);
+    Node<int> *ptr = nthToLast(head, 2, i);
     cout<<"nthToLast:"<<ptr->data<<endl;
 
     return 0;
